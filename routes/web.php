@@ -31,17 +31,17 @@ Route::namespace('Site')->group(function () {
     // Route::get('/home', 'HomeController'); // invokable controller example
     // Route::get('/', 'HomeController@index'); // normal controller example
     
-    Route::get('/', 'HomeController');
+    Route::get('/', 'HomeController')->name('site.home');
 
-    Route::get('/produtos', 'CategoryController@index');
-    Route::get('/produtos/{slug}', 'CategoryController@show');
+    Route::get('/produtos', 'CategoryController@index')->name('site.products');
+    Route::get('/produtos/{slug}', 'CategoryController@show')->name('site.products.category');
 
-    Route::get('/blog', 'BlogController');
+    Route::get('/blog', 'BlogController')->name('site.blog');
     
-    Route::get('/sobre', 'AboutController');
+    Route::get('/sobre', 'AboutController')->name('site.about');
 
-    Route::get('/contact', 'ContactController@index');
-    Route::post('/contact', 'ContactController@contactForm');
+    Route::get('/contato', 'ContactController@index')->name('site.contact');
+    Route::post('/contato', 'ContactController@contactForm')->name('site.contact.form');
 
 
 });
